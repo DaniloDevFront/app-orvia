@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useAuthStore } from "@state/stores";
-import { colors, spacing, typography } from "@themes/theme";
+import { theme } from "@themes/theme";
 import { Button } from "@shared/components/Button";
 import { Input } from "@shared/components/Input";
 import { Container } from "@shared/components";
@@ -16,13 +16,13 @@ export const RegisterScreen: React.FC = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
 
   const handleRegister = async () => {
     try {
-      await register(name, email, password);
-      navigation.navigate("Home");
+      await register(name, email, phone, password);
     } catch (error) {
       setError(true);
       console.error(error);
@@ -54,6 +54,16 @@ export const RegisterScreen: React.FC = () => {
 
       <Input
         style={styles.input}
+        placeholder="Telefone"
+        value={phone}
+        onChangeText={setPhone}
+        keyboardType="phone-pad"
+        autoCapitalize="none"
+        error={error}
+      />
+
+      <Input
+        style={styles.input}
         placeholder="Senha"
         value={password}
         onChangeText={setPassword}
@@ -61,7 +71,9 @@ export const RegisterScreen: React.FC = () => {
         error={error}
       />
 
-      <Button title="Cadastrar" onPress={handleRegister} style={styles.button} />
+      <Button onPress={handleRegister} style={styles.button}>
+        <Text>Cadastrar</Text>
+      </Button>
 
       <View style={styles.loginContainer}>
         <Text style={styles.loginText}>Já tem uma conta? </Text>
@@ -74,33 +86,29 @@ export const RegisterScreen: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: spacing.xl,
-    backgroundColor: colors.background,
-  },
   title: {
-    ...typography.title,
-    marginBottom: spacing.xxl,
-    marginTop: spacing.xxl,
+    ...theme.typography.h2,
+    marginBottom: theme.spacing.xxl,
+    marginTop: theme.spacing.xxl,
+    textAlign: "center",
   },
   input: {
-    marginBottom: spacing.md,
+    marginBottom: theme.spacing.md,
   },
   button: {
-    marginTop: spacing.lg,
+    marginTop: theme.spacing.lg,
   },
   loginContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    marginTop: spacing.lg,
+    marginTop: theme.spacing.lg,
   },
   loginText: {
-    color: colors.textSecondary,
-    ...typography.body,
+    color: theme.colors.textSecondary,
+    ...theme.typography.body1,
   },
   loginLink: {
-    color: colors.primary,
-    ...typography.body,
+    color: theme.colors.primary,
+    ...theme.typography.body1,
   },
 });

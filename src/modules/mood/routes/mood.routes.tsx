@@ -13,7 +13,7 @@ export const MoodRoutes = () => {
       <Stack.Screen
         name="MoodRegisterScreen"
         component={MoodRegisterScreen}
-        options={getDefaultHeaderOptions({ navigation, showReturn: false })}
+        options={getDefaultHeaderOptions({ navigation, showReturn: true })}
       />
     </Stack.Navigator>
   );

@@ -17,7 +17,9 @@ export const WelcomeScreen = () => {
         <Text style={styles.title}>Bem-vindo ao App</Text>
         <Image source={require("../../../../assets/welcome/meditation.png")} style={styles.image} />
         <Text style={styles.subtitle}>Gerencie suas rotinas, registre seu humor e acompanhe seu progresso</Text>
-        <Button title="Começar" onPress={() => navigation.navigate("Login")} style={styles.button} />
+        <Button onPress={() => navigation.navigate("Login")} style={styles.button}>
+          <Text>Começar</Text>
+        </Button>
       </View>
     </Container>
   );

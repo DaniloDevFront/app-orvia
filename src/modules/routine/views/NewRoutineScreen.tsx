@@ -79,7 +79,9 @@ export const NewRoutineScreen = () => {
         <Input value={address} onChangeText={setAddress} placeholder="Digite o endereço" style={styles.input} />
       </Card>
 
-      <Button title="Adicionar" onPress={handleSubmit} style={styles.button} />
+      <Button onPress={handleSubmit} style={styles.button}>
+        <Text>Adicionar</Text>
+      </Button>
     </Container>
   );
 };

@@ -10,20 +10,16 @@ const emojis = {
   veryGood: "😄",
 };
 
-interface MoodEmojiProps {
+interface Props {
   type: keyof typeof emojis;
   size?: number;
   selected?: boolean;
   onPress?: () => void;
 }
 
-export const MoodEmoji: React.FC<MoodEmojiProps> = ({ type, size = 40, selected = false, onPress }) => {
+export const MoodEmoji: React.FC<Props> = ({ type, size = 40, selected = false, onPress }) => {
   return (
-    <TouchableOpacity
-      style={[styles.container, selected && styles.selected, { width: size * 1.5, height: size * 1.5 }]}
-      onPress={onPress}
-      disabled={!onPress}
-    >
+    <TouchableOpacity style={[styles.container, selected && styles.selected]} onPress={onPress} disabled={!onPress}>
       <Text style={[styles.emoji, { fontSize: size }]}>{emojis[type]}</Text>
     </TouchableOpacity>
   );
@@ -34,7 +30,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 999,
-    margin: theme.spacing.xs,
   },
   selected: {
     backgroundColor: theme.colors.primary + "20",

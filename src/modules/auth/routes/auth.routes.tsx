@@ -22,7 +22,7 @@ export const AuthRoutes = () => {
       <Stack.Screen
         name="ForgotPassword"
         component={ForgotPasswordScreen}
-        options={getDefaultHeaderOptions({ navigation, showReturn: true })}
+        options={getDefaultHeaderOptions({ navigation, showReturn: true, title: "Esqueceu a senha ?" })}
       />
     </Stack.Navigator>
   );

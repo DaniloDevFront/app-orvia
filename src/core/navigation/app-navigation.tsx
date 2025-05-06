@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { useAuthStore } from "@state/stores";
 import { PublicLayout } from "./public-layout";

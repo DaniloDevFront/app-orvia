@@ -3,11 +3,11 @@ import { TouchableOpacity, Text, StyleSheet, TouchableOpacityProps } from "react
 import { theme } from "@themes/theme";
 
 interface ButtonProps extends TouchableOpacityProps {
-  title: string;
+  children: React.ReactNode;
   variant?: "primary" | "secondary" | "outline";
 }
 
-export const Button: React.FC<ButtonProps> = ({ title, style, variant = "primary", ...rest }) => {
+export const Button: React.FC<ButtonProps> = ({ children, style, variant = "primary", ...rest }) => {
   return (
     <TouchableOpacity
       style={[
@@ -25,7 +25,7 @@ export const Button: React.FC<ButtonProps> = ({ title, style, variant = "primary
           variant === "outline" && styles.textOutline,
         ]}
       >
-        {title}
+        {children}
       </Text>
     </TouchableOpacity>
   );
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: theme.colors.primary,
     padding: theme.spacing.md,
-    borderRadius: 8,
+    borderRadius: theme.borderRadius.xs,
     alignItems: "center",
     justifyContent: "center",
   },

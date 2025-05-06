@@ -8,6 +8,7 @@ export type Routine = {
   latitude: number;
   longitude: number;
   time: string;
+  icon: string;
 };
 
 export type Checkin = {

@@ -1,0 +1,4 @@
+[ ] Adicionar plugin 'react-native-reanimated/plugin' no babel.config.js
+[ ] Garantir import 'react-native-reanimated' no topo do App.tsx
+[ ] Reiniciar Metro Bundler após alterações
+[ ] Testar carrossel Suggestion em funcionamento 

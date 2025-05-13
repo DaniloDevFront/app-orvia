@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Card, Container } from "@shared/components";
 import { colors, spacing, typography } from "@themes/theme";
-import { useAuthStore } from "@state/stores";
+import { useAuthStore, useUserStore } from "@state/stores";
 
 export const ProfileScreen: React.FC = () => {
-  const { user, logout } = useAuthStore();
+  const { logout } = useAuthStore();
+  const { user } = useUserStore();
 
   const handleLogout = async () => {
     try {
@@ -17,14 +18,12 @@ export const ProfileScreen: React.FC = () => {
 
   return (
     <Container>
-      <Text style={styles.title}>Perfil</Text>
-
       <Card>
         <View style={styles.avatarContainer}>
           <View style={styles.avatar}>
-            <Text style={styles.avatarText}>{user?.name?.[0]?.toUpperCase() || "U"}</Text>
+            <Text style={styles.avatarText}>{user?.profile?.name[0]?.toUpperCase()}</Text>
           </View>
-          <Text style={styles.name}>{user?.name || "Usuário"}</Text>
+          <Text style={styles.name}>{user?.profile.name}</Text>
           <Text style={styles.email}>{user?.email}</Text>
         </View>
       </Card>

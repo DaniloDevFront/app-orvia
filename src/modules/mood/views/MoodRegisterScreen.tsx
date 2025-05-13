@@ -75,7 +75,9 @@ export const MoodRegisterScreen: React.FC = () => {
         <Text style={styles.recordButtonText}>{isRecording ? "Gravando..." : "Gravar nota de voz"}</Text>
       </TouchableOpacity>
 
-      <Button title="Salvar" onPress={handleSubmit} style={styles.button} disabled={!selectedMood} />
+      <Button onPress={handleSubmit} style={styles.button} disabled={!selectedMood}>
+        <Text>Salvar</Text>
+      </Button>
     </Container>
   );
 };

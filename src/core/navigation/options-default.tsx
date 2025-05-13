@@ -5,12 +5,14 @@ import { NativeStackNavigationOptions } from "@react-navigation/native-stack";
 interface Props {
   navigation: any;
   showReturn?: boolean;
+  title?: string;
 }
 
-export function getDefaultHeaderOptions({ navigation, showReturn = true }: Props): NativeStackNavigationOptions {
+export function getDefaultHeaderOptions({ navigation, showReturn = true, title }: Props): NativeStackNavigationOptions {
   return {
     headerShown: true,
     headerShadowVisible: true,
+    headerTitle: title,
     headerLeft: showReturn
       ? () => (
           <TouchableOpacity onPress={() => navigation.goBack()}>

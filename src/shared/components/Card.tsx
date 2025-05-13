@@ -16,10 +16,9 @@ export const Card: React.FC<CardProps> = ({ children, style, ...rest }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: theme.colors.background,
-    borderRadius: 12,
+    backgroundColor: theme.colors.card,
+    borderRadius: theme.borderRadius.lg,
     padding: theme.spacing.lg,
-    marginBottom: theme.spacing.md,
     shadowColor: theme.colors.text,
     shadowOffset: {
       width: 0,

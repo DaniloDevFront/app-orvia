@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Button } from "@shared/components/Button";
 import { Input } from "@shared/components/Input";
-import { colors, spacing, typography } from "@themes/theme";
+import { theme } from "@themes/theme";
 import { Container } from "@shared/components/Container";
 
 type NavigationProp = NativeStackNavigationProp<any>;
@@ -37,7 +37,9 @@ export const ForgotPasswordScreen: React.FC = () => {
         error={error}
       />
 
-      <Button title="Enviar instruções" onPress={handleSubmit} style={styles.button} />
+      <Button onPress={handleSubmit} style={styles.button}>
+        <Text>Enviar instruções</Text>
+      </Button>
 
       <TouchableOpacity style={styles.loginLink} onPress={() => navigation.navigate("Login")}>
         <Text style={styles.loginText}>Voltar para o login</Text>
@@ -47,32 +49,23 @@ export const ForgotPasswordScreen: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-  title: {
-    ...typography.title,
-    marginBottom: spacing.lg,
-  },
   subtitle: {
-    ...typography.body,
-    color: colors.textSecondary,
-    marginBottom: spacing.xl,
-  },
-  message: {
-    ...typography.body,
-    color: colors.textSecondary,
+    ...theme.typography.body1,
+    color: theme.colors.textSecondary,
+    marginBottom: theme.spacing.xl,
     textAlign: "center",
-    marginBottom: spacing.xxl,
   },
   input: {
-    marginBottom: spacing.xl,
+    marginBottom: theme.spacing.xl,
   },
   button: {
-    marginBottom: spacing.lg,
+    marginBottom: theme.spacing.lg,
   },
   loginLink: {
     alignItems: "center",
   },
   loginText: {
-    color: colors.primary,
-    ...typography.body,
+    color: theme.colors.primary,
+    ...theme.typography.body1,
   },
 });

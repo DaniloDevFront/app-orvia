@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "type": "SPOTIFY_PLAYLIST",
+    "userId": "1",
+    "message": "Que ótimo que você está super animado! Vamos manter essa energia?",
+    "content": {
+      "id": "37i9dQZF1DX3rxVfibe1L0",
+      "type": "SPOTIFY_PLAYLIST",
+      "title": "Feel Good Friday",
+      "url": "https://open.spotify.com/playlist/37i9dQZF1DX3rxVfibe1L0",
+      "imageUrl": "https://i.scdn.co/image/ab67706f00000003bd0e19e810bb4b55ab164a95",
+      "description": "Hits que vão te fazer dançar e cantar junto!",
+      "provider": "SPOTIFY"
+    },
+    "createdAt": "2024-03-01T10:00:00.000Z",
+    "emotionType": "veryHappy",
+    "isActive": true,
+    "isLiked": false,
+    "isDisliked": false
+  },
+  {
+    "id": "2",
+    "userId": "1",
+    "type": "SPOTIFY_PODCAST",
+    "message": "Que tal um podcast motivacional para manter o alto astral?",
+    "content": {
+      "id": "6WRTzGhq3uFxMrxHrHh1lo",
+      "type": "SPOTIFY_PODCAST",
+      "title": "Café da Manhã",
+      "url": "https://open.spotify.com/show/6WRTzGhq3uFxMrxHrHh1lo",
+      "imageUrl": "https://i.scdn.co/image/ab67656300005f1f28434a1c72aae41765dfe750",
+      "description": "Comece seu dia com as melhores histórias inspiradoras",
+      "provider": "SPOTIFY"
+    },
+    "createdAt": "2024-03-01T10:00:00.000Z",
+    "emotionType": "veryHappy",
+    "isActive": true,
+    "isLiked": false,
+    "isDisliked": false
+  },
+  {
+    "id": "3",
+    "userId": "1",
+    "type": "NETFLIX",
+    "message": "Uma comédia para complementar seu dia incrível!",
+    "content": {
+      "id": "70125231",
+      "type": "NETFLIX",
+      "title": "Gente Grande",
+      "url": "https://www.netflix.com/br/title/70125231",
+      "imageUrl": "https://occ-0-703-420.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABXCyi3o1BsNo_CTmK1e4fquxAh43wsxPky3qAzGK2xZ8yfkdViXVLAapp1W2hVHQZeP9Alff7x3kg6AwHhy4efHhhGNsNo5wYAlK.webp?r=5c0",
+      "description": "Uma comédia hilária para toda família",
+      "provider": "NETFLIX"
+    },
+    "createdAt": "2024-03-01T10:00:00.000Z",
+    "emotionType": "veryHappy",
+    "isActive": true,
+    "isLiked": false,
+    "isDisliked": false
+  }
+]

@@ -1,8 +1,4 @@
-import { UserType } from '@shared/enums';
-
-export type User = {
-  id: string;
-  name: string;
-  email: string;
-  type: UserType;
-}; 
+export interface AuthResponse {
+  access_token: string;
+  user_id: number;
+}
